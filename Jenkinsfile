@@ -13,7 +13,7 @@ pipeline {
         stage("test") {
             when {
                 expression {
-                    env.BRANCH_NAME = 'dev'
+                    return env.BRANCH_NAME = 'dev'
                 }
             }
             steps {
