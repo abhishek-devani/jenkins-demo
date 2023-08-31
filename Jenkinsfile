@@ -31,11 +31,11 @@ pipeline {
             steps {
                 echo "deploying the application..."
                 // Wrapper syntax
-                withCredentials([
-                    usernamePassword(credentials: 'server-creds', userVariable: USER, passwordVariable: PWD)
-                ]) {
-                    echo '${USER} : ${PWD}'
-                }
+                // withCredentials([
+                //     usernamePassword(credentials: 'server-creds', userVariable: USER, passwordVariable: PWD)
+                // ]) {
+                //     echo '${USER} : ${PWD}'
+                // }
             }
         }
 
