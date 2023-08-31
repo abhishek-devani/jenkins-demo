@@ -1,6 +1,9 @@
 pipeline {
 
     agent any
+    environment {
+        VERSION = '1'
+    }
     
     stages {
 
@@ -13,7 +16,7 @@ pipeline {
         stage("test") {
             when {
                 expression {
-                    return env.BRANCH_NAME = 'dev'
+                    BRANCH_NAME == 'dev'
                 }
             }
             steps {
