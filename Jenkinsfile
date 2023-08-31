@@ -3,6 +3,8 @@ pipeline {
     agent any
     environment {
         NEW_VERSION = '1.1.0'
+        // "Credentials Buinding" plugin needed
+        // SERVER_CREDS = credentials('server-creds')
     }
     
     stages {
@@ -28,6 +30,12 @@ pipeline {
         stage("deploy") {
             steps {
                 echo "deploying the application..."
+                // Wrapper syntax
+                withCredentials([
+                    usernamePassword(credentials: 'server-creds', userVariable: USER, passwordVariable: PWD)
+                ]) {
+                    echo '${USER} : ${PWD}'
+                }
             }
         }
 
