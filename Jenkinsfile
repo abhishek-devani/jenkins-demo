@@ -1,3 +1,5 @@
+def gv
+
 pipeline {
 
     agent any
@@ -17,6 +19,15 @@ pipeline {
     // }
     
     stages {
+
+        stage("Init") {
+            steps {
+                script {
+                    gv = load "script.groovy"
+                    gv.initApp()
+                }
+            }
+        }
 
         stage("build") {
             when {
