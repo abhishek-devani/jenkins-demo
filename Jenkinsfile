@@ -19,6 +19,11 @@ pipeline {
     stages {
 
         stage("build") {
+            when {
+                expression {
+                    params.executeTests == true
+                }
+            }
             steps {
                 echo "building the application..."
                 echo "building version ${NEW_VERSION}"
@@ -28,8 +33,7 @@ pipeline {
         stage("test") {
             when {
                 expression {
-                    // BRANCH_NAME == 'dev'
-                    params.executeTests == true
+                    BRANCH_NAME == 'dev'
                 }
             }
             steps {
