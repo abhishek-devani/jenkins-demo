@@ -5,7 +5,7 @@ pipeline {
         stage('Create Folder on Desktop') {
             steps {
                 script {
-                    def scriptPath = "${SCRIPTS_DIR}/createFolder.groovy"
+                    def scriptPath = "${SCRIPTS_DIR}/script.groovy"
                     def folderName = "temp"
 
                     load scriptPath
