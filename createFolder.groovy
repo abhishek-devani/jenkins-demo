@@ -3,7 +3,7 @@ import java.io.File
 
 // Define a function to create a folder on the desktop
 def createFolderOnDesktop(folderName) {
-    def desktopPath = "C:\Users\gs-3257\DesktopDesktop"
+    def desktopPath = "C:\Users\gs-3257\Desktop"
     def folderPath = desktopPath + "/" + folderName
     new File(folderPath).mkdirs()
 }
