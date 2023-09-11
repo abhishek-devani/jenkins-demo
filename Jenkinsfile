@@ -8,8 +8,7 @@ pipeline {
                     def scriptPath = "script.groovy"
                     def folderName = "temp"
 
-                    load scriptPath
-                    createFolderOnDesktop(folderName)
+                    load scriptPath createFolderOnDesktop(folderName)
 
                     echo "Folder created on the desktop at: ${System.getProperty("user.home")}/Desktop/${folderName}"
                 }
